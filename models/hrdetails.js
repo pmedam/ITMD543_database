@@ -1,11 +1,11 @@
 const {Schema, model} = require('mongoose');
 
 const hrdetails = new Schema({
-    companyName: String,
-    startDate: String,
-    endDate: String,
-    roleName: String,
-    rolesAndResponsibilities: String
+    name: String,
+    phoneNumber: String,
+    email: String,
+    subject: String,
+    message: String
 })
 
 module.exports = model('hrdetails', hrdetails)

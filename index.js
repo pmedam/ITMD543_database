@@ -23,8 +23,15 @@ app.get('/', async (req, res) => {
 });
 
 app.post('/', async (req, res) => {
-  const hr = await hrdetails.create(req.body)
-  res.json(hr);
+
+  await hrdetails({
+    name: req.body.name,
+    phoneNumber: req.body.phoneNumber,
+    email: req.body.email,
+    subject: req.body.subject,
+    message: req.body.message
+  }).save()
+  res.json({success: true});
 })
 
 mongoose.connect(uri)
